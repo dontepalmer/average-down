@@ -1,5 +1,5 @@
-# Average Down calculator.
-# Display graph. 
+# Average Down Calculator.
+# Display Graph. 
 
 import matplotlib.pyplot as plt
 
@@ -20,11 +20,11 @@ def calc(total_cost, total_shares):
         bar_labels.append('Purchase ' + str(i) + ': ' + str("{:,}".format(shares)) + ' Shares @ $' + str("{:,.2f}".format(price)))
         heights.append(price)
 
-    # Calculate average down 
+    # Calculate Average Down 
     avg_down = total_cost / total_shares
 
-    heights.append(avg_down)
     bar_labels.append('Average Down: ' + str("{:,}".format(total_shares)) + ' Shares @ $' + str("{:,.2f}".format(avg_down)))
+    heights.append(avg_down)
 
     print("\nResults")
     print("\nTotal Shares:", total_shares)
@@ -35,10 +35,11 @@ def calc(total_cost, total_shares):
 
 def graph(w, z):
 
+    plt.title("Bar Graph")
     plt.bar(bar_labels, heights) 
 
-    plt.title("Bar Graph")
     plt.show()
+
 
 x = 0
 y = 0
